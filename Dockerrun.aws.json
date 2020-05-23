@@ -1,0 +1,26 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [],
+  "containerDefinitions": [
+    {
+      "name": "app",
+      "image": "616465875746.dkr.ecr.us-east-1.amazonaws.com/aplicacao-node-simples:latest",
+      "environment": [],
+      "essential": true,
+      "memory": 256,
+      "links": [],
+      "mountPoints": [
+        {
+          "sourceVolume": "awseb-logs-app",
+          "containerPath": "/app/log"
+        }
+      ],
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 80
+        }
+      ]
+    }
+  ]
+}
